@@ -3,4 +3,13 @@ INSERT INTO mytable(CarrierID,Location,price) VALUES (1,'935 Daystar Parkway',97
 INSERT INTO mytable(CarrierID,Location,price) VALUES (2,'8 Memorial Hill',26);
 INSERT INTO mytable(CarrierID,Location,price) VALUES (3,'4031 Maple Trail',49);
 
-//
+//Carriers
+INSERT INTO mytable(CarrierID,Phone,Email) VALUES (1,'801-887-3263','echasmer0@si.edu');
+INSERT INTO mytable(CarrierID,Phone,Email) VALUES (2,'415-547-0169','hinnes1@noaa.gov');
+INSERT INTO mytable(CarrierID,Phone,Email) VALUES (3,'216-184-9563','glivzey2@google.com');
+
+
+//Shipments
+INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (1,42,1,1);
+INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (2,70,2,2);
+INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (3,19,3,3);
