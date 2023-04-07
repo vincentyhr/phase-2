@@ -30,6 +30,21 @@ INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (1,'Jaquith','Lars');
 INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (2,'Mufi','Walklott');
 INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (3,'Alexina','Scollan');
 
+//Wish_item
+INSERT INTO Wish_item(WishID,ProductID) VALUES (1,1);
+INSERT INTO Wish_item(WishID,ProductID) VALUES (2,2);
+INSERT INTO Wish_item(WishID,ProductID) VALUES (3,3);
+
+//Social_Media
+INSERT INTO Social_Media(Handle,BrandID) VALUES ('Keylex',1);
+INSERT INTO Social_Media(Handle,BrandID) VALUES ('Namfix',2);
+INSERT INTO Social_Media(Handle,BrandID) VALUES ('Matsoft',3);
+
+//Review_made
+INSERT INTO Review_made(CustomerID,ProductID,n_stars,Comment) VALUES (1,'1','2','Team-oriented');
+INSERT INTO Review_made(CustomerID,ProductID,n_stars,Comment) VALUES (2,'2','1','Cloned');
+INSERT INTO Review_made(CustomerID,ProductID,n_stars,Comment) VALUES (3,'3','2','artificial intelligence');
+
 //Customers
 INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (1,'Yelena','Bridgwood','Orlando',32808,'Florida','737 Forest Run Road');
 INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (2,'Bren','Giamuzzo','Tucson',85720,'Arizona','84615 Rusk Trail');
