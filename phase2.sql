@@ -60,3 +60,41 @@ CREATE TABLE Review_made (
   FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
   FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
+
+Create Table Brands (
+    BrandID INT,
+    Name VARCHAR(50),
+    Email VARCHAR(50),
+    City VARCHAR(50),
+    ZIP VARCHAR(50),
+    State VARCHAR(50),
+    Street VARCHAR(50),
+    PRIMARY KEY (BrandID)
+);
+
+Create Table Products (
+    Name VARCHAR(50),
+    Description VARCHAR(50),
+    ProductID INT,
+    Price INT,
+    BrandID INT,
+    Category_Title VARCHAR(50),
+    PRIMARY KEY (ProductID),
+    FOREIGN KEY (BrandID) REFERENCES Brands(BrandID),
+    FOREIGN KEY (Category_Title) REFERENCES Categories(Title)
+);
+
+CREATE TABLE Variants (
+    ProductID INT,
+    color VARCHAR(50),
+    size VARCHAR(50),
+    stock INT,
+    PRIMARY KEY (ProductID, color, size),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+CREATE TABLE Categories (
+    Title VARCHAR(50),
+    Description VARCHAR(50),
+    PRIMARY KEY (Title)
+);
