@@ -19,3 +19,8 @@ INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (3,19,3,3)
 INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (1,34,1,'false');
 INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (2,90,2,'true');
 INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (3,68,3,'true');
+
+//Wish_lists
+INSERT INTO mytable(WishID,Name,CustomerID) VALUES (1,'Jaquith','Lars');
+INSERT INTO mytable(WishID,Name,CustomerID) VALUES (2,'Mufi','Walklott');
+INSERT INTO mytable(WishID,Name,CustomerID) VALUES (3,'Alexina','Scollan');
