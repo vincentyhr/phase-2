@@ -39,3 +39,8 @@ INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (3,'Ra
 INSERT INTO Brands(BrandID,Name,Email,City,ZIP,State,Street) VALUES (1,'Obediah O''Moylane','oomoylane0@go.com','Toledo',43656,'Ohio','9 Melby Court');
 INSERT INTO Brands(BrandID,Name,Email,City,ZIP,State,Street) VALUES (2,'Hermie Manns','hmanns1@sakura.ne.jp','Inglewood',90305,'California','2081 Shopko Parkway');
 INSERT INTO Brands(BrandID,Name,Email,City,ZIP,State,Street) VALUES (3,'Gabby Oosthout de Vree','goosthout2@ucsd.edu','Orlando',32835,'Florida','6 Loeprich Drive');
+
+//Products
+INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Cheese - Le Cheve Noir','circuit',1,47,1,'Yellow');
+INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Steam Pan Full Lid','benchmark',2,47,2,'Puce');
+INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Flower - Leather Leaf Fern','Organic',3,60,3,'Pink');
