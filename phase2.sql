@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS Carrier_rates (
   CarrierID INT NOT NULL,
   Location VARCHAR(50) NOT NULL,
   Price DECIMAL NOT NULL,
-  PRIMARY KEY (Location),
+  PRIMARY KEY (Location, CarrierID),
   -- Carrier rates updated/deleted when carrier is
   CONSTRAINT fk_1 FOREIGN KEY (CarrierID) REFERENCES Carriers(CarrierID)
       ON UPDATE CASCADE
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS OrderDetails (
   OrderID INT,
   ProductID INT,
   Quantity INT,
-
+  PRIMARY KEY (OrderID, ProductID),
   -- If Orders is updated, Order Details is Updated
   -- If Order is deleted, Order Details is Deleted
   CONSTRAINT fk_5 FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
@@ -87,7 +87,11 @@ CREATE TABLE IF NOT EXISTS Wish_lists (
   WishID INT PRIMARY KEY,
   Name VARCHAR(100) NOT NULL,
   CustomerID INT,
-  FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+  -- If Customer is updated, update its wish list
+  -- If Customer is deleted, delete its wish list
+  CONSTRAINT fk_7 FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
 );
 
 
@@ -96,8 +100,8 @@ CREATE TABLE IF NOT EXISTS Wish_item (
   WishID INT,
   ProductID INT,
   PRIMARY KEY (WishID, ProductID),
-  FOREIGN KEY (WishID) REFERENCES Wish_lists(WishID),
-  FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+  CONSTRAINT fk_8 FOREIGN KEY (WishID) REFERENCES Wish_lists(WishID),
+  CONSTRAINT fk_8 FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
 
 -- Create the Social_Media table
