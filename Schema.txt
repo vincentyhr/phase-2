@@ -24,3 +24,9 @@ INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (3,68,3,'true');
 INSERT INTO mytable(WishID,Name,CustomerID) VALUES (1,'Jaquith','Lars');
 INSERT INTO mytable(WishID,Name,CustomerID) VALUES (2,'Mufi','Walklott');
 INSERT INTO mytable(WishID,Name,CustomerID) VALUES (3,'Alexina','Scollan');
+
+//Customers
+INSERT INTO mytable(CustomerID,First,Last,City,ZIP,State,Street) VALUES (1,'Yelena','Bridgwood','Orlando',32808,'Florida','737 Forest Run Road');
+INSERT INTO mytable(CustomerID,First,Last,City,ZIP,State,Street) VALUES (2,'Bren','Giamuzzo','Tucson',85720,'Arizona','84615 Rusk Trail');
+INSERT INTO mytable(CustomerID,First,Last,City,ZIP,State,Street) VALUES (3,'Randolf','Tremblot','Saint Louis',63116,'Missouri','8418 Dryden Point');
+
