@@ -1,32 +1,32 @@
 //Carrier_rates
-INSERT INTO mytable(CarrierID,Location,price) VALUES (1,'935 Daystar Parkway',97);
-INSERT INTO mytable(CarrierID,Location,price) VALUES (2,'8 Memorial Hill',26);
-INSERT INTO mytable(CarrierID,Location,price) VALUES (3,'4031 Maple Trail',49);
+INSERT INTO Carrier_rates(CarrierID,Location,price) VALUES (1,'935 Daystar Parkway',97);
+INSERT INTO Carrier_rates(CarrierID,Location,price) VALUES (2,'8 Memorial Hill',26);
+INSERT INTO Carrier_rates(CarrierID,Location,price) VALUES (3,'4031 Maple Trail',49);
 
 //Carriers
-INSERT INTO mytable(CarrierID,Phone,Email) VALUES (1,'801-887-3263','echasmer0@si.edu');
-INSERT INTO mytable(CarrierID,Phone,Email) VALUES (2,'415-547-0169','hinnes1@noaa.gov');
-INSERT INTO mytable(CarrierID,Phone,Email) VALUES (3,'216-184-9563','glivzey2@google.com');
+INSERT INTO Carriers(CarrierID,Phone,Email) VALUES (1,'801-887-3263','echasmer0@si.edu');
+INSERT INTO Carriers(CarrierID,Phone,Email) VALUES (2,'415-547-0169','hinnes1@noaa.gov');
+INSERT INTO Carriers(CarrierID,Phone,Email) VALUES (3,'216-184-9563','glivzey2@google.com');
 
 
 //Shipments
-INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (1,42,1,1);
-INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (2,70,2,2);
-INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (3,19,3,3);
+INSERT INTO Shipments(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (1,42,1,1);
+INSERT INTO Shipments(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (2,70,2,2);
+INSERT INTO Shipments(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (3,19,3,3);
 
 //Orders
 
-INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (1,34,1,'false');
-INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (2,90,2,'true');
-INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (3,68,3,'true');
+INSERT INTO Orders(OrderDd,Price,CustomerID,isReturn) VALUES (1,34,1,'false');
+INSERT INTO Orders(OrderDd,Price,CustomerID,isReturn) VALUES (2,90,2,'true');
+INSERT INTO Orders(OrderDd,Price,CustomerID,isReturn) VALUES (3,68,3,'true');
 
 //Wish_lists
-INSERT INTO mytable(WishID,Name,CustomerID) VALUES (1,'Jaquith','Lars');
-INSERT INTO mytable(WishID,Name,CustomerID) VALUES (2,'Mufi','Walklott');
-INSERT INTO mytable(WishID,Name,CustomerID) VALUES (3,'Alexina','Scollan');
+INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (1,'Jaquith','Lars');
+INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (2,'Mufi','Walklott');
+INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (3,'Alexina','Scollan');
 
 //Customers
-INSERT INTO mytable(CustomerID,First,Last,City,ZIP,State,Street) VALUES (1,'Yelena','Bridgwood','Orlando',32808,'Florida','737 Forest Run Road');
-INSERT INTO mytable(CustomerID,First,Last,City,ZIP,State,Street) VALUES (2,'Bren','Giamuzzo','Tucson',85720,'Arizona','84615 Rusk Trail');
-INSERT INTO mytable(CustomerID,First,Last,City,ZIP,State,Street) VALUES (3,'Randolf','Tremblot','Saint Louis',63116,'Missouri','8418 Dryden Point');
+INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (1,'Yelena','Bridgwood','Orlando',32808,'Florida','737 Forest Run Road');
+INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (2,'Bren','Giamuzzo','Tucson',85720,'Arizona','84615 Rusk Trail');
+INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (3,'Randolf','Tremblot','Saint Louis',63116,'Missouri','8418 Dryden Point');
 
