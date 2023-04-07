@@ -13,3 +13,9 @@ INSERT INTO mytable(CarrierID,Phone,Email) VALUES (3,'216-184-9563','glivzey2@go
 INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (1,42,1,1);
 INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (2,70,2,2);
 INSERT INTO mytable(ShipmentID,ShipmentCost,CarrierID,OrderID) VALUES (3,19,3,3);
+
+//Orders
+
+INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (1,34,1,'false');
+INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (2,90,2,'true');
+INSERT INTO mytable(OrderDd,Price,CustomerID,isReturn) VALUES (3,68,3,'true');
