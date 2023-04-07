@@ -1,0 +1,6 @@
+//Carrier_rates
+INSERT INTO mytable(CarrierID,Location,price) VALUES (1,'935 Daystar Parkway',97);
+INSERT INTO mytable(CarrierID,Location,price) VALUES (2,'8 Memorial Hill',26);
+INSERT INTO mytable(CarrierID,Location,price) VALUES (3,'4031 Maple Trail',49);
+
+//
