@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS Shipments (
 
 -- Create the Wish_lists table
 CREATE TABLE IF NOT EXISTS Wish_lists (
-  WishID INT PRIMARY KEY,
+  WishID INT,
   Name VARCHAR(100) NOT NULL,
   CustomerID INT,
   PRIMARY KEY(WishID),
