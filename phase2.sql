@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS Orders (
   Date DATETIME DEFAULT CURRENT_TIMESTAMP,
   Price DECIMAL,
   CustomerID INT,
-  isReturn BOOL, -- foreign key for OrderID cannot reference two tables
+  isReturn BOOLEAN, -- foreign key for OrderID cannot reference two tables
   PRIMARY KEY (OrderID),
 
   -- Orders updates if Customer is updated
@@ -194,6 +194,85 @@ CREATE TABLE IF NOT EXISTS Review_made (
       ON UPDATE CASCADE
       ON DELETE CASCADE
 );
+
+-- Customers
+INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (1,'Yelena','Bridgwood','Orlando',32808,'Florida','737 Forest Run Road');
+INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (2,'Bren','Giamuzzo','Tucson',85720,'Arizona','84615 Rusk Trail');
+INSERT INTO Customers(CustomerID,First,Last,City,ZIP,State,Street) VALUES (3,'Randolf','Tremblot','Saint Louis',63116,'Missouri','8418 Dryden Point');
+
+-- Brands
+INSERT INTO Brands(BrandID,Name,Email,City,ZIP,State,Street) VALUES (1,'Obediah O''Moylane','oomoylane0@go.com','Toledo',43656,'Ohio','9 Melby Court');
+INSERT INTO Brands(BrandID,Name,Email,City,ZIP,State,Street) VALUES (2,'Hermie Manns','hmanns1@sakura.ne.jp','Inglewood',90305,'California','2081 Shopko Parkway');
+INSERT INTO Brands(BrandID,Name,Email,City,ZIP,State,Street) VALUES (3,'Gabby Oosthout de Vree','goosthout2@ucsd.edu','Orlando',32835,'Florida','6 Loeprich Drive');
+
+-- Categories
+INSERT INTO Categories(Title,Description) VALUES ('Fuscia','Orange Roughy 6/8 Oz');
+INSERT INTO Categories(Title,Description) VALUES ('Teal','Tomatoes - Cherry, Yellow');
+INSERT INTO Categories(Title,Description) VALUES ('Aquamarine','Bread - Bagels, Plain');
+
+-- Products
+INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Cheese - Le Cheve Noir','circuit',1,47,1,'Fuscia');
+INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Steam Pan Full Lid','benchmark',2,47,2,'Teal');
+INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Flower - Leather Leaf Fern','Organic',3,60,3,'Aquamarine');
+
+
+-- Variants
+INSERT INTO Variants(ProductID,color,size,stock) VALUES (1,'Red','3XL',1);
+INSERT INTO Variants(ProductID,color,size,stock) VALUES (2,'Pink','L',43);
+INSERT INTO Variants(ProductID,color,size,stock) VALUES (3,'Teal','XS',34);
+
+-- Carriers
+INSERT INTO Carriers(CarrierID,Phone,Email) VALUES (1,'801-887-3263','echasmer0@si.edu');
+INSERT INTO Carriers(CarrierID,Phone,Email) VALUES (2,'415-547-0169','hinnes1@noaa.gov');
+INSERT INTO Carriers(CarrierID,Phone,Email) VALUES (3,'216-184-9563','glivzey2@google.com');
+
+-- Carrier_rates
+INSERT INTO Carrier_rates(CarrierID,Location,price) VALUES (1,'935 Daystar Parkway',97);
+INSERT INTO Carrier_rates(CarrierID,Location,price) VALUES (2,'8 Memorial Hill',26);
+INSERT INTO Carrier_rates(CarrierID,Location,price) VALUES (3,'4031 Maple Trail',49);
+
+-- Orders
+INSERT INTO Orders(OrderID,Price,CustomerID,isReturn) VALUES (1,34,1,0);
+INSERT INTO Orders(OrderID,Price,CustomerID,isReturn) VALUES (2,90,2,1);
+INSERT INTO Orders(OrderID,Price,CustomerID,isReturn) VALUES (3,68,3,1);
+
+-- OrderDetails
+INSERT INTO OrderDetails(OrderID,ProductID,Quantity) VALUES (1,1,9);
+INSERT INTO OrderDetails(OrderID,ProductID,Quantity) VALUES (2,2,8);
+INSERT INTO OrderDetails(OrderID,ProductID,Quantity) VALUES (3,3,8);
+
+-- Shipments
+INSERT INTO Shipments(ShipmentID,ShippingCost,CarrierID,OrderID) VALUES (1,42,1,1);
+INSERT INTO Shipments(ShipmentID,ShippingCost,CarrierID,OrderID) VALUES (2,70,2,2);
+INSERT INTO Shipments(ShipmentID,ShippingCost,CarrierID,OrderID) VALUES (3,19,3,3);
+
+-- Wish_lists
+INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (1,'Jaquith',1);
+INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (2,'Mufi',2);
+INSERT INTO Wish_lists(WishID,Name,CustomerID) VALUES (3,'Alexina',3);
+
+-- Wish_item
+INSERT INTO Wish_item(WishID,ProductID) VALUES (1,1);
+INSERT INTO Wish_item(WishID,ProductID) VALUES (2,2);
+INSERT INTO Wish_item(WishID,ProductID) VALUES (3,3);
+
+-- Social_Media
+INSERT INTO Social_Media(Handle,BrandID) VALUES ('Keylex',1);
+INSERT INTO Social_Media(Handle,BrandID) VALUES ('Namfix',2);
+INSERT INTO Social_Media(Handle,BrandID) VALUES ('Matsoft',3);
+
+-- Review_made
+INSERT INTO Review_made(CustomerID,ProductID,n_stars,Comment) VALUES (1,'1','2','Team-oriented');
+INSERT INTO Review_made(CustomerID,ProductID,n_stars,Comment) VALUES (2,'2','1','Cloned');
+INSERT INTO Review_made(CustomerID,ProductID,n_stars,Comment) VALUES (3,'3','2','artificial intelligence');
+
+
+
+
+
+
+
+
 
 
 
