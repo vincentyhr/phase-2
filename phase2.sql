@@ -26,6 +26,8 @@ CREATE TABLE IF NOT EXISTS Shipments (
   CarrierID INT,
   OrderID INT,
 
+  PRIMARY KEY (ShipmentID),
+
   -- Shipment updates if Order is updated
   -- Can't delete order if a shipment exists for it
   CONSTRAINT fk_2 FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
@@ -40,7 +42,7 @@ CREATE TABLE IF NOT EXISTS Shipments (
 
 CREATE TABLE IF NOT EXISTS Orders (
   OrderID INT,
-  Date VARCHAR(50),
+  Date DATETIME DEFAULT CURRENT_TIMESTAMP,
   Price DECIMAL,
   CustomerID INT,
   isReturn BOOL, -- foreign key for OrderID cannot reference two tables
@@ -100,15 +102,26 @@ CREATE TABLE IF NOT EXISTS Wish_item (
   WishID INT,
   ProductID INT,
   PRIMARY KEY (WishID, ProductID),
-  CONSTRAINT fk_8 FOREIGN KEY (WishID) REFERENCES Wish_lists(WishID),
+
+  -- If WishList is updated/deleted, update/delete Wish_item
+  -- If ProductID is updated/deleted, update/delete Wish_item
+  CONSTRAINT fk_8 FOREIGN KEY (WishID) REFERENCES Wish_lists(WishID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE,
   CONSTRAINT fk_8 FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
 );
 
 -- Create the Social_Media table
 CREATE TABLE IF NOT EXISTS Social_Media (
   Handle VARCHAR(50) PRIMARY KEY,
   BrandID INT,
-  FOREIGN KEY (BrandID) REFERENCES Brands(BrandID)
+
+  -- If Brand is updated/deleted, update/delete its Social Media
+  CONSTRAINT fk_9 FOREIGN KEY (BrandID) REFERENCES Brands(BrandID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
 );
 
 -- Create the Review_made table
@@ -118,8 +131,14 @@ CREATE TABLE IF NOT EXISTS Review_made (
   n_stars INT,
   Comment VARCHAR(500),
   PRIMARY KEY (CustomerID, ProductID),
-  FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
-  FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+  -- If Customer is updated/deleted, update/delete review_made
+  -- If Product is updated/deleted, update/delete review_made
+  CONSTRAINT fk_9 FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE,
+  CONSTRAINT fk_10 FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Brands (
@@ -141,8 +160,14 @@ CREATE TABLE IF NOT EXISTS Products (
     BrandID INT,
     Category_Title VARCHAR(50),
     PRIMARY KEY (ProductID),
-    FOREIGN KEY (BrandID) REFERENCES Brands(BrandID),
-    FOREIGN KEY (Category_Title) REFERENCES Categories(Title)
+    -- If Brand is updated/deleted, update/delete Product
+    -- If Category is updated/deleted, update/delete Product
+    CONSTRAINT fk_11 FOREIGN KEY (BrandID) REFERENCES Brands(BrandID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE,
+    CONSTRAINT fk_12 FOREIGN KEY (Category_Title) REFERENCES Categories(Title)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Variants (
@@ -151,7 +176,10 @@ CREATE TABLE IF NOT EXISTS Variants (
     size VARCHAR(50),
     stock INT,
     PRIMARY KEY (ProductID, color, size),
-    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+    -- If Products is updated/deleted, update/delete the variants connected to the productID
+    CONSTRAINT fk_13 FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Categories (
