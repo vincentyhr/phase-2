@@ -44,3 +44,13 @@ INSERT INTO Brands(BrandID,Name,Email,City,ZIP,State,Street) VALUES (3,'Gabby Oo
 INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Cheese - Le Cheve Noir','circuit',1,47,1,'Yellow');
 INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Steam Pan Full Lid','benchmark',2,47,2,'Puce');
 INSERT INTO Products(Name,Description,ProductID,Price,BrandID,Category_Title) VALUES ('Flower - Leather Leaf Fern','Organic',3,60,3,'Pink');
+
+//Categories
+INSERT INTO Categories(Title,Description) VALUES ('Fuscia','Orange Roughy 6/8 Oz');
+INSERT INTO Categories(Title,Description) VALUES ('Teal','Tomatoes - Cherry, Yellow');
+INSERT INTO Categories(Title,Description) VALUES ('Aquamarine','Bread - Bagels, Plain');
+
+//Variants
+INSERT INTO Variants(ProductID,color,size,stock) VALUES (1,'Red','3XL',1);
+INSERT INTO Variants(ProductID,color,size,stock) VALUES (2,'Pink','L',43);
+INSERT INTO Variants(ProductID,color,size,stock) VALUES (3,'Teal','XS',34);
